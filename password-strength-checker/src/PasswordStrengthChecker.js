@@ -34,8 +34,8 @@ const PasswordStrengthChecker = () => {
 
     return (
         <div className="container">
-            <label htmlFor="password">Enter Password:</label>
-            <input
+            <label className="password-text" htmlFor="password">Enter Password:</label>
+            <input className="password-area"
                 type="password"
                 id="password"
                 value={password}
