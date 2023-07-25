@@ -1394,8 +1394,3 @@ section .container {
     transition: all .3s;
 }
 
-@media only screen and (max-width: 500px) {
-
-    /* Стилі, які будуть застосовуватися для пристроїв з максимальною шириною 375px */
-
-}
