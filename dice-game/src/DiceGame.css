@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1500px;
+    background: linear-gradient(90deg, rgba(74,221,224,1) 0%, rgba(216,57,149,1) 31%, rgba(216,57,149,1) 71%, rgba(74,221,224,1) 100%);;
+}
+.Wrapper {
+    background: antiquewhite;
+    width: 1400px;
+    height: 800px;
+
+    margin: 20px;
+    box-shadow: 30px 15px 5px black;
+}
+.DiceGame {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.left-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-section {
+    margin: 20px 0 0 0;
+}
+
+input {
+    padding: 5px;
+    font-size: 16px;
+    width: 150px;
+    text-align: center;
+    margin: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.clear-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background-color: #ddd;
+}
+.result {
+    font-size: 20px;
+    margin: 20px 0 0 0;
+}
+
+.players-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.players-list li {
+    margin: 0 0 5px 0;
+}
+.dice {
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+.cube {
+    position: relative;
+    right:400px;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(0);
+    animation: rollAnimation 5s infinite;
+}
+
+.face {
+    margin: 0 auto;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: url('./dice1.png') no-repeat; /* Зверніть увагу на шлях */
+    background-size: cover;
+    border: none;
+}
+
+.front {
+    transform: rotateY(0deg) translateZ(50px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(50px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.rolling-start {
+    animation: rollAnimation 1s linear infinite;
+}
+
+.rolling-end {
+    animation: none;
+    transform: rotateX(0) rotateY(0);
+}
+
+@keyframes rollAnimation {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(0);
+    }
+    25% {
+        transform: rotateX(-180deg) rotateY(180deg) translateY(-50px);
+    }
+    50% {
+        transform: rotateX(-180deg) rotateY(-180deg) translateY(-100px);
+    }
+    75% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(-50px);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(0deg) translateY(0);
+    }
+}
+.winner-message {
+    margin-top: 20px;
+    font-weight: bold;
+}

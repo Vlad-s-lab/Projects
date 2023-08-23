@@ -1,0 +1,38 @@
+.animated-numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.number {
+    position: absolute;
+    animation: moveUp 5s linear infinite, moveRight 10s linear infinite;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(110%);
+    }
+    100% {
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(110%);
+    }
+}
+
